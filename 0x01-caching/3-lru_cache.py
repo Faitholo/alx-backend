@@ -32,7 +32,7 @@ class LRUCache(BaseCaching):
                 removed = self.cache_data_list.pop(0)
                 del self.cache_data[removed]
                 print("DISCARD: {}".format(removed))
-   
+
     def get(self, key):
         """
         retrieve an item from cache
