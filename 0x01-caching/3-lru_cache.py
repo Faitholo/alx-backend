@@ -41,9 +41,6 @@ class LRUCache(BaseCaching):
             key(str): key of the item to add
         Returns: item if the key exists, None otherwise
         """
-        if key:
-            if key in self.cache_data:
-                self.cache_data_list.remove(key)
-                self.cache_data_list.append(key)
-                return self.cache_data[key]
+        if key in self.cache_data:
+            return self.cache_data[key]
         return None
