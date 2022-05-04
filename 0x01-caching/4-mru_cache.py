@@ -32,7 +32,6 @@ class MRUCache(BaseCaching):
                 removed = self.cache_data_list.pop(-2)
                 del self.cache_data[removed]
                 print("DISCARD: {}".format(removed))
-            
 
     def get(self, key):
         """
