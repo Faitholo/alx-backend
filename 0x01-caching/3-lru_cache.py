@@ -32,8 +32,7 @@ class LRUCache(BaseCaching):
                 removed = self.cache_data_list.pop(0)
                 del self.cache_data[removed]
                 print("DISCARD: {}".format(removed))
-            
-
+                
     def get(self, key):
         """
         retrieve an item from cache
@@ -41,6 +40,9 @@ class LRUCache(BaseCaching):
             key(str): key of the item to add
         Returns: item if the key exists, None otherwise
         """
-        if key in self.cache_data:
-            return self.cache_data[key]
+        if key:
+            if key in self.cache_data:
+                self.cache_data_list.remove(key)
+                self.cache_data_list.append(key)
+                return self.cache_data[key]
         return None
